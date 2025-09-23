@@ -57,7 +57,7 @@ function getTimeFromSeconds(oldSeconds) {
     minutesStr = (minutes > 9) ? `${minutes}` : `0${minutes}`;
     hoursStr = (hours > 9) ? `${hours}` : `0${hours}`;
  
-    return `00:${minutesStr}:${secondsStr}.${milisecondsStr}`;
+    return `${hours}:${minutesStr}:${secondsStr}.${milisecondsStr}`;
 }
 
 pickerLoadBtn.addEventListener("click", async () => {
