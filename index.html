@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+    <main>
+
+        <div class="sub-app">
+            <div class="picker box">
+                <input type="file" id="picker-input">
+                <div class="picker__panel">
+                    <label for="sub-lang">lang
+                        <input type="text" id="sub-lang" value="en">
+                    </label>
+                    <button class="picker__confirm_btn" id="picker-load-btn">load</button>
+                </div>
+                
+            </div>
+    
+    
+            <div class="content-box box">
+                <a class="download-btn" href="javascript:void(0)" id="download-btn">download</a>
+                <p id="content-text"></p>
+            </div>
+
+        </div>
+    </main>
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
