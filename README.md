@@ -27,9 +27,9 @@ WEBVTT
 Kind: captions
 Language: en
 
-0:00:34.270,0:00:35.710
+00:00:34.270 --> 00:00:35.710
 This is where it begins
 
-0:00:37.270,0:00:37.849
+00:00:37.270 --> 00:00:37.849
 Hello everyone
 ```
