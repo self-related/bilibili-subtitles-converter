@@ -1,26 +1,22 @@
 /**@type {HTMLInputElement} */
-const pickerInput = document.getElementById("picker-input");
+const fileInput = document.getElementById("file-input");
 
 /**@type {HTMLButtonElement} */
-const pickerLoadBtn = document.getElementById("picker-load-btn");
+const convertBtn = document.getElementById("convert-btn");
 
 /**@type {HTMLParagraphElement} */
-const contentTextElem = document.getElementById("content-text");
+const resultTextElement = document.getElementById("result-text");
 
 /**@type {HTMLAnchorElement} */
 const downloadBtn = document.getElementById("download-btn");
 
 /**@type {HTMLInputElement} */
-const subLangInput = document.getElementById("sub-lang");
+const langInput = document.getElementById("lang-input");
 
-
-
-
-let convertedSrt = "";
 
 let downloadBlob = new Blob();
-
-let subLangExt = "";
+let convertedSrt = "";
+let language = "";
 
 
 /**@type {string[]} */
@@ -60,46 +56,34 @@ function getTimeFromSeconds(oldSeconds) {
     return `${hoursStr}:${minutesStr}:${secondsStr}.${milisecondsStr}`;
 }
 
-pickerLoadBtn.addEventListener("click", async () => {
-    const pickedJson = await pickerInput.files[0].text();
+convertBtn.addEventListener("click", async () => {
+    const pickedJson = await fileInput.files[0].text();
     const pickedObj = JSON.parse(pickedJson);
-    console.log(pickedObj);
 
     /**@type {Array<{from: number, to: number, content: string}>} */
     const pickedObjBody = pickedObj.body;
 
-
-    const timeFrom = getTimeFromSeconds(pickedObjBody.at(1).from);
-
-    const timeTo = getTimeFromSeconds(pickedObjBody.at(1).to);
-
-
     pickedObjBody.forEach((value) => {
         const timeFrom = getTimeFromSeconds(value.from);
         const timeTo = getTimeFromSeconds(value.to);
-
         srtTimelines.push(`${timeFrom} --> ${timeTo}\n${value.content}`);
 
     });
 
-    convertedSrt = `WEBVTT\nKind: captions\nLanguage: en\n\n`+ srtTimelines.join('\n\n');
-    
-    contentTextElem.innerText = convertedSrt;
-
+    convertedSrt = `WEBVTT\nKind: captions\nLanguage: ${language}\n\n`+ srtTimelines.join('\n\n');
+    resultTextElement.innerText = convertedSrt;
     downloadBlob = new Blob([convertedSrt], { type: "text/plain" });
-
-   
 });
 
 
 downloadBtn.addEventListener("click", () => {
-    if (subLangInput.value != null && subLangInput.value != '') {
-        subLangExt = `.${subLangInput.value}`
+    if (langInput.value != null && langInput.value != '') {
+        language = `.${langInput.value}`
     } else {
-        subLangExt = '';
+        language = '';
     }
     
-    downloadBtn.download = pickerInput.files[0].name.slice(0, -5) + subLangExt + ".srt";
+    downloadBtn.download = fileInput.files[0].name.slice(0, -5) + language + ".srt";
 
     downloadBtn.href = URL.createObjectURL(downloadBlob);
 });

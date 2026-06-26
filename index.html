@@ -3,34 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bilibili subtitle converter</title>
     <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-
     <main>
-
-        <div class="sub-app">
-            <div class="picker box">
-                <input type="file" id="picker-input">
-                <div class="picker__panel">
-                    <label for="sub-lang">lang
-                        <input type="text" id="sub-lang" value="en">
+        <div class="app">
+            <div class="section file-picker">
+                <input type="file" id="file-input">
+                <div class="file-picker__panel">
+                    <label for="lang-input">lang
+                        <input type="text" id="lang-input" value="en">
                     </label>
-                    <button class="picker__confirm_btn" id="picker-load-btn">load</button>
+                    <button class="file-picker__convert-btn" id="convert-btn">Convert</button>
                 </div>
-                
-            </div>
-    
-    
-            <div class="content-box box">
-                <a class="download-btn" href="javascript:void(0)" id="download-btn">download</a>
-                <p id="content-text"></p>
             </div>
 
+            <div class="section result-wrap">
+                <a class="download-btn" href="javascript:void(0)" id="download-btn">download</a>
+                <p id="result-text"></p>
+            </div>
         </div>
-    </main>
-    
+    </main>    
 
     <script src="./index.js"></script>
 </body>

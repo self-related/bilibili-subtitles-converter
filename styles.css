@@ -5,6 +5,7 @@
 :root {
     background-color: #303030;
     color: white;
+    font-size: 16px;
 }
 
 body {
@@ -19,13 +20,13 @@ main {
     margin-top: 100px;
 }
 
-.sub-app {
+.app {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.box {
+.section {
     background-color: #707070;
 
     min-height: 40px;
@@ -34,45 +35,45 @@ main {
     border-radius: 6px;
 }
 
-.picker {
+.file-picker {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
     padding: 2px 5px;
 }
 
-.picker__confirm_btn {
+.file-picker__panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.file-picker #lang-input {
+    width: 40px;
+}
+
+.file-picker #convert-btn {
     display: block;
     width: 70px;
     background-color: rgb(245, 177, 53);
     border-radius: 6px;
     border: none;
     cursor: pointer;
+
+    &:hover {
+        background-color: rgb(235, 189, 103);
+    }
 }
 
-.picker__confirm_btn:hover {
-    background-color: rgb(235, 189, 103);
-}
-
-
-.content-box {
+.result-wrap {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 2px 9px;
     max-height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
-.picker__panel {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-}
-
-#sub-lang {
-    width: 40px;
-}
 .download-btn {
     display: block;
     align-self: self-end;
