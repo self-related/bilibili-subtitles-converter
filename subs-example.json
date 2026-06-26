@@ -1,0 +1,51 @@
+{
+  "font_size": 0.4,
+  "font_color": "#FFFFFF",
+  "background_alpha": 0.5,
+  "background_color": "#9C27B0",
+  "stroke": "none",
+  "body": [
+    {
+      "from": 34.27,
+      "to": 35.71,
+      "location": 2,
+      "content": "This is where it begins"
+    },
+    {
+      "from": 37.27,
+      "to": 37.849,
+      "location": 2,
+      "content": "Hello everyone"
+    },
+    {
+      "from": 37.849,
+      "to": 43.389,
+      "location": 2,
+      "content": "The summer pop-up store is now open"
+    },
+    {
+      "from": 43.389,
+      "to": 46.58,
+      "location": 2,
+      "content": "Everyone is happy"
+    },
+    {
+      "from": 46.58,
+      "to": 50.66,
+      "location": 2,
+      "content": "I heard there are many customers here"
+    },
+    {
+      "from": 50.66,
+      "to": 53.1,
+      "location": 2,
+      "content": "Why are there no customers?"
+    },
+    {
+      "from": 54.7,
+      "to": 57.7,
+      "location": 2,
+      "content": "Tell me about it"
+    }
+  ]
+}
