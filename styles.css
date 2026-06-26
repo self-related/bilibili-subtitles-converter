@@ -6,6 +6,7 @@
     background-color: #303030;
     color: white;
     font-size: 16px;
+    font-family: sans-serif;
 
 
     @media (width < 800px) {
@@ -103,8 +104,7 @@ main {
 
     &:invalid {
         color: red;
-
-        text-shadow: 0.05rem 0.05rem 0.03rem rgb(0, 0, 0);
+        text-shadow: 0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.6);
     }
 }
 
