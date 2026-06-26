@@ -25,15 +25,13 @@ convertBtn.onclick = async () => {
 };
 
 
-downloadBtn.onclick = () => {
-    if (langInput.value != null && langInput.value != '') {
-        language = `.${langInput.value}`
-    } else {
-        language = '';
-    }
-    
+downloadBtn.onclick = () => {  
     const baseName = getBaseName(fileInput.files[0].name);
     downloadBtn.download = baseName + ".srt";
     downloadBtn.href = URL.createObjectURL(downloadBlob);
 };
 
+
+langInput.addEventListener('input', (event) => {
+    language = event.currentTarget.value;
+});
