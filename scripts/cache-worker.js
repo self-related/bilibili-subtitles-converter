@@ -16,7 +16,7 @@ async function precache() {
 }
 
 async function cacheFirst(request) {
-    const responseCached = await caches.match(request);
+    const responseCached = await caches.match(request, { ignoreVary: true });
     if (responseCached) 
     return responseCached;
 
@@ -52,7 +52,6 @@ self.addEventListener("install", (event) => {
 });
 
 
-
 self.addEventListener('fetch', (event) => {
-  event.respondWith(caches.match(event.request).then((response) => response || fetch(event.request)));
+  event.respondWith(caches.match(event.request, { ignoreVary: true }).then((response) => response || fetch(event.request)));
 });
