@@ -52,13 +52,6 @@ self.addEventListener("install", (event) => {
 });
 
 
-self.addEventListener("fetch", (event) => {
-    const url = new URL(event.request.url);
-    if (precachedResources.includes(url.pathname)) {
-        event.respondWith(cacheFirst(event.request));
-    }
-});
-
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(caches.match(event.request).then((response) => response || fetch(event.request)));
